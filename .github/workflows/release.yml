@@ -35,7 +35,7 @@ jobs:
         id: create_release
         uses: ncipollo/release-action@v1
         with:
-          name: JoStro Pack ${{ github.ref_name }}
+          name: JoStros Mods ${{ github.ref_name }}
           artifacts: "*.zip"
           artifactContentType: application/zip
           
