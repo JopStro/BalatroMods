@@ -30,8 +30,6 @@ jobs:
 
       - name: Create a Release
         uses: ncipollo/release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           name: JoStro Pack ${{ github.ref_name }}
           
