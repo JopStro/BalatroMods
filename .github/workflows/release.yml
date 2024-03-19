@@ -30,6 +30,7 @@ jobs:
           zip JoStro_Pack -r apis mods textures
 
       - name: Create a Release
+        id: create_release
         uses: ncipollo/release-action@v1
         with:
           name: JoStro Pack ${{ github.ref_name }}
