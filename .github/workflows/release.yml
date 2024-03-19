@@ -27,20 +27,15 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Create Release Zips
         run: |
-          zip JoStro_Pack -r apis mods textures
+          zip JoStro-Pack -r apis mods textures
+          zip Parrot-Joker -r apis mods/parrot.lua textures/*x/parrot_joker_placeholder.png
+          zip Buffoon-Deck -r apis mods/buffoon_deck.lua textures/*x/buffoon_deck.png
 
       - name: Create a Release
         id: create_release
         uses: ncipollo/release-action@v1
         with:
           name: JoStro Pack ${{ github.ref_name }}
+          artifacts: "*.zip"
+          artifactContentType: application/zip
           
-      - name: Upload Complete Pack
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: JoStro_Pack.zip
-          asset_name: JoStro-Pack.zip
-          asset_content_type: application/zip
