@@ -12,15 +12,16 @@ table.insert(mods,
     },
     enabled = true,
     on_enable = function()
-      local row_one = libSprite.addToEnhancers("buffoon_deck.png",1)
+      libSprite.addAtlas("JS_Buffoon","buffoon_deck.png",71,95)
       local center = {
         name = "Buffoon Deck",
         stake = 1,
         unlocked = true,
-        pos = {x=0,y=row_one},
+        pos = {x=0,y=0},
         set = "Back",
         config = {booster="p_buffoon_jumbo_1"},
         discovered = true,
+        atlas = "JS_Buffoon",
       }
       local loc = {
         name = "Buffoon Deck",
