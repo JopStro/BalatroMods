@@ -50,8 +50,8 @@ table.insert(mods,
                 change_viewed_backref(args)
 
                 for key, val in pairs(G.sticker_card.area.cards) do
-                val.children.back = false
-                val:set_ability(val.config.center, true)
+                    val.children.back = nil
+                    val:set_sprites(val.config.center)
                 end
             end
         end,
