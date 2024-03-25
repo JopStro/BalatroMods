@@ -1,0 +1,10 @@
+{
+  "name": "Buffoon_Deck",
+  "description": "Simple custom deck that gives you a Jumbo Buffoon Pack at the start of a run.",
+  "version_number": "0.2.0",
+  "dependencies": [
+    "JoStro-JSUtils-0.1.0",
+    "Thunderstore-lovely-0.3.1"
+  ],
+  "website_url": "https://github.com/JopStro/BalatroMods/"
+}

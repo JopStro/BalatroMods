@@ -1,0 +1,38 @@
+[manifest]
+version = "0.2.0"
+dump_lua = false
+priority = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "G.blind_select.alignment.offset.x = 0"
+position = "after"
+payload = "self.GAME.selected_back:trigger_effect({context = 'blind_select'})"
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "back.lua"
+pattern = "if not args then return end"
+position = "after"
+payload = '''
+if args.context == 'blind_select' and self.effect.config.booster and not G.GAME.booster_deck_triggered then
+  G.GAME.booster_deck_triggered = true
+  G.E_MANAGER:add_event(Event({
+        func = function()
+          local key = self.effect.config.booster
+          local card = Card(G.play.T.x + G.play.T.w/2 - G.CARD_W*1.27/2,
+          G.play.T.y + G.play.T.h/2-G.CARD_H*1.27/2, G.CARD_W*1.27, G.CARD_H*1.27, G.P_CARDS.empty, G.P_CENTERS[key], {bypass_discovery_center = true, bypass_discovery_ui = true})
+          card.cost = 0
+          card.from_tag = true
+          G.FUNCS.use_card({config = {ref_table = card}})
+          card:start_materialize()
+          return true
+        end
+      }))
+end
+'''
+match_indent = true
+overwrite = false
