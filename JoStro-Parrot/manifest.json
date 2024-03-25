@@ -1,0 +1,10 @@
+{
+  "name": "Parrot_Joker",
+  "description": "A custom joker that copies the abilities of other jokers at random",
+  "version_number": "0.3.0",
+  "dependencies": [
+    "JoStro-JSUtils-0.1.0",
+    "Thunderstore-lovely-0.3.1"
+  ],
+  "website_url": "https://github.com/JopStro/BalatroMods/"
+}

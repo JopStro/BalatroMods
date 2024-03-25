@@ -1,0 +1,14 @@
+{
+  "en-us": {
+    "Joker": {
+      "j_parrot": {
+        "name": "Parrot",
+        "text": [
+          "Randomly copies",
+          "the abilities",
+          "of other {C:attention}Jokers"
+        ]
+      }
+    }
+  }
+}
