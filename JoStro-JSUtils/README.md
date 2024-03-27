@@ -11,10 +11,11 @@ The following files are supported:
 
 # Examples
 
-A basic joker added in `centers.json`. `order` is currently set automatically, and pos is defaulted to `{x = 0, y = 0}` when none is provided. The `atlas` property is also supported for custom atli. 
+A basic joker added in `centers.json`. `order` is modified to be relative to the current mod or  is set automiatically, and pos is defaulted to `{x = 0, y = 0}` when none is provided. The `atlas` property is also supported for custom atli. 
 ```json
 {
   "j_example_joker": {
+    "order": 1,
     "name": "Example Joker",
     "unlocked": true,
     "discovered": true,

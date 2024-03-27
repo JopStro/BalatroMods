@@ -36,13 +36,45 @@ function _M.addCenters(game)
     end
   end
   for centers in configs("centers.json") do
+    local base_amounts = copy_table(set_amounts)
+    local unordered = {}
     for k, v in pairs(centers) do
       v.pos = v.pos or {x=0,y=0} --Set a default sprite pos since single sprite atli are so common
-      v.order = (set_amounts[v.set] or 0)+1
+      if v.order then
+        v.order = v.order + base_amounts[v.set]
+        set_amounts[v.set] = math.max(v.order, set_amounts[v.set])
+        game.P_CENTERS[k] = v
+      else 
+        unordered[k] = v
+      end
+    end
+    for k,v in pairs(unordered) do
+      v.order = set_amounts[v.set]+1
       set_amounts[v.set] = v.order
       game.P_CENTERS[k] = v
     end
   end
+end
+
+local function add_prototypes(tab,count,additions,mutations)
+  local base = count
+  local unordered = {}
+  for k, v in pairs(additions) do
+    mutations(v)
+    if v.order then
+      v.order = base + v.order
+      count = math.max(count, v.order)
+      tab[k] = v
+    else
+      unordered[k] = v
+    end
+  end
+  for k, v in pairs(unordered) do
+    v.order = count + 1
+    count = v.order
+    tab[k] = v
+  end
+  return count
 end
 
 function _M.addBlinds(game)
@@ -51,15 +83,12 @@ function _M.addBlinds(game)
     count = count + 1
   end
   for blinds in configs("blinds.json") do
-    for k, v in pairs(blinds) do
+    count = add_prototypes(game.P_BLINDS,count,blinds,function(v)
       v.pos = v.pos or {x=0,y=0}
-      v.order = count + 1
-      count = v.order
       if type(v.boss_colour) == "string" then
         v.boss_colour = HEX(v.boss_colour)
       end
-      game.P_BLINDS[k] = v
-    end
+    end)
   end
 end
 
@@ -77,13 +106,10 @@ function _M.addTags(game)
     count = count + 1
   end
   for tags in configs("tags.json") do
-    for k, v in pairs(tags) do
+    count = add_prototypes(game.P_TAGS,count,tags,function(v)
       v.pos = v.pos or {x=0,y=0}
       v.set = "Tag"
-      v.order = count + 1
-      count = v.order
-      game.P_TAGS[k] = v
-    end
+    end)
   end
 end
 
@@ -93,12 +119,9 @@ function _M.addSeals(game)
     count = count + 1
   end
   for seals in configs("seals.json") do
-    for k, v in pairs(seals) do
-      v.order = count + 1
-      count = v.order
+    count = add_prototypes(game.P_SEALS,count,seals,function(v)
       v.set = "Seal"
-      game.P_SEALS[k] = v
-    end
+    end)
   end
 end
 
