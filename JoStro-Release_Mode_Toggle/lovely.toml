@@ -1,0 +1,41 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+dump_lua = false
+
+[[patches]]
+[patches.pattern]
+target = "globals.lua"
+pattern = "self.SETTINGS = {"
+position = "after"
+payload = "release_mode = _RELEASE_MODE,"
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "self.SETTINGS.version*"
+position = "before"
+payload = "_RELEASE_MODE = self.SETTINGS.release_mode"
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "G.F_CRASH_REPORTS*"
+position = "before"
+payload = '''
+create_toggle({label = "Release Mode", ref_table = G.SETTINGS, ref_value = "release_mode",
+  info = {
+    "Disable to allow developer cheats",
+    "Hold TAB to show cheat sheet",
+  },
+  callback = function(set_toggle)
+    _RELEASE_MODE = set_toggle
+  end,
+}),
+'''
+match_indent = true
+overwrite = false

@@ -1,0 +1,31 @@
+[config]
+schemaVersion = "1.0.0"
+
+[package]
+namespace = "JoStro"
+name = "Release_Mode_Toggle"
+versionNumber = "1.0.0"
+description = "Add settings toggle for release mode"
+websiteUrl = "https://github.com/JopStro/BalatroMods"
+containsNsfwContent = false
+[package.dependencies]
+Thunderstore-lovely = "0.3.1"
+
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./build"
+
+[[build.copy]]
+source = "./lovely.toml"
+target = "lovely.toml"
+
+
+[publish]
+repository = "https://thunderstore.io"
+communities = [ "balatro", ]
+[publish.categories]
+balatro = [ "mods", ]
+
+
