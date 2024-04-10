@@ -1,4 +1,4 @@
-# This is a Thundunderstore package mirror of rxi's json.lua with an added lovely patch
+# This is a Thunderstore package mirror of rxi's json.lua with an added lovely patch
 The provided lovely patch adds it under the module name "json". A modified extract from the project's original readme follows
 
 ...
