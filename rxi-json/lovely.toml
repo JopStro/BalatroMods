@@ -1,0 +1,11 @@
+[manifest]
+version = "0.1.2"
+dump_lua = false
+priority = 0
+
+[[patches]]
+[patches.module]
+source = "json.lua"
+before = "main.lua"
+name = "json"
+
