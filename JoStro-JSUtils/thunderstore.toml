@@ -1,0 +1,44 @@
+[config]
+schemaVersion = "0.2.1"
+
+[package]
+namespace = "JoStro"
+name = "JSUtils"
+versionNumber = "0.2.1"
+description = "Lets mods add item prototypes, descriptions and custom sprites with simple json configuration files"
+websiteUrl = "https://github.com/JopStro/BalatroMods/"
+containsNsfwContent = false
+[package.dependencies]
+Thunderstore-lovely = "0.4.0"
+metherul-nativefs = "1.0.1"
+JoStro-json = "0.1.3"
+
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./build"
+
+[[build.copy]]
+source = "./lovely.toml"
+target = "lovely.toml"
+
+[[build.copy]]
+source = "./js_utils.lua"
+target = "js_utils.lua"
+
+[[build.copy]]
+source = "./LICENSE"
+target = "LICENSE"
+
+[[build.copy]]
+source = "./CHANGELOG.md"
+target = "CHANGELOG.md"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = [ "balatro", ]
+[publish.categories]
+balatro = [ "tools", "libraries", ]
+
+

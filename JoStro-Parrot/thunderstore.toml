@@ -1,0 +1,43 @@
+[config]
+schemaVersion = "0.3.2"
+
+[package]
+namespace = "JoStro"
+name = "Parrot_Joker"
+versionNumber = "0.3.2"
+description = "A custom joker that copies the abilities of other jokers at random"
+websiteUrl = "https://github.com/JopStro/BalatroMods/"
+containsNsfwContent = false
+[package.dependencies]
+Thunderstore-lovely = "0.4.0"
+JoStro-JSUtils = "0.2.1"
+
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./build"
+
+[[build.copy]]
+source = "./lovely.toml"
+target = "lovely.toml"
+
+[[build.copy]]
+source = "./js_utils"
+target = "js_utils/"
+[[build.copy]]
+source = "./textures"
+target = "textures/"
+
+[[build.copy]]
+source = "./LICENSE"
+target = "LICENSE"
+
+
+[publish]
+repository = "https://thunderstore.io"
+communities = [ "balatro", ]
+[publish.categories]
+balatro = [ "mods", ]
+
+

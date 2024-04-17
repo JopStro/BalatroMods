@@ -1,12 +1,12 @@
 [config]
-schemaVersion = "1.0.1"
+schemaVersion = "0.1.3"
 
 [package]
 namespace = "JoStro"
-name = "Release_Mode_Toggle"
-versionNumber = "1.0.1"
-description = "Add settings toggle for release mode"
-websiteUrl = "https://github.com/JopStro/BalatroMods"
+name = "json"
+versionNumber = "0.1.3"
+description = "Exposes json.lua as a module using lovely"
+websiteUrl = "https://github.com/rxi/json.lua"
 containsNsfwContent = false
 [package.dependencies]
 Thunderstore-lovely = "0.4.0"
@@ -21,11 +21,18 @@ outdir = "./build"
 source = "./lovely.toml"
 target = "lovely.toml"
 
+[[build.copy]]
+source = "./json.lua"
+target = "json.lua"
+
+[[build.copy]]
+source = "./LICENSE"
+target = "LICENSE"
 
 [publish]
 repository = "https://thunderstore.io"
 communities = [ "balatro", ]
 [publish.categories]
-balatro = [ "mods", ]
+balatro = [ "libraries", ]
 
 
