@@ -1,16 +1,16 @@
 [config]
-schemaVersion = "0.3.2"
+schemaVersion = "0.3.3"
 
 [package]
 namespace = "JoStro"
 name = "Parrot_Joker"
-versionNumber = "0.3.2"
+versionNumber = "0.3.3"
 description = "A custom joker that copies the abilities of other jokers at random"
 websiteUrl = "https://github.com/JopStro/BalatroMods/"
 containsNsfwContent = false
 [package.dependencies]
 Thunderstore-lovely = "0.4.0"
-JoStro-JSUtils = "0.2.1"
+JoStro-JSUtils = "0.3.0"
 
 
 [build]

@@ -1,12 +1,12 @@
 {
-  "b_js_buffoon": {
-    "name": "Buffoon Deck",
-    "stake": 1,
-    "unlocked": true,
-    "pos": {"x":0,"y":0},
-    "set": "Back",
-    "config": {"booster": "p_buffoon_jumbo_1"},
-    "discovered": true,
-    "atlas": "JS_Buffoon"
-  }
+  b_js_buffoon: {
+    name: "Buffoon Deck",
+    stake: 1,
+    unlocked: true,
+    pos: {x:0,y:0},
+    set: "Back",
+    config: {booster: "p_buffoon_jumbo_1"},
+    discovered: true,
+    atlas: "JS_Buffoon",
+  },
 }

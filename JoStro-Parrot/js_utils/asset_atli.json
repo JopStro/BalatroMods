@@ -1,3 +1,8 @@
 [
-  {"name": "Parrot", "path": "parrot_joker_placeholder.png", "px": 71, "py": 95}
+  {
+    name: "Parrot",
+    path: "parrot_joker_placeholder.png",
+    px: 71,
+    py: 95,
+  }
 ]

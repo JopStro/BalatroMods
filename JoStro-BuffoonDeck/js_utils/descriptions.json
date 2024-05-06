@@ -1,13 +1,13 @@
 {
   "en-us": {
-    "Back": {
-      "b_js_buffoon": {
-        "name": "Buffoon Deck",
-        "text": [
+    Back: {
+      b_js_buffoon: {
+        name: "Buffoon Deck",
+        text: [
           "Start by opening",
-          "a {C:attention}Jumbo Buffoon Pack"
-        ]
-      }
-    }
-  }
+          "a {C:attention}Jumbo Buffoon Pack",
+        ],
+      },
+    },
+  },
 }

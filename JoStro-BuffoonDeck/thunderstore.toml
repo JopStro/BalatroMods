@@ -1,16 +1,16 @@
 [config]
-schemaVersion = "0.2.2"
+schemaVersion = "0.2.3"
 
 [package]
 namespace = "JoStro"
 name = "Buffoon_Deck"
-versionNumber = "0.2.2"
+versionNumber = "0.2.3"
 description = "Simple custom deck that gives you a Jumbo Buffoon Pack at the start of a run."
 websiteUrl = "https://github.com/JopStro/BalatroMods/"
 containsNsfwContent = false
 [package.dependencies]
 Thunderstore-lovely = "0.4.0"
-JoStro-JSUtils = "0.2.1"
+JoStro-JSUtils = "0.3.0"
 
 
 [build]

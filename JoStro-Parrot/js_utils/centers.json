@@ -1,17 +1,17 @@
 {
-  "j_parrot": {
-    "unlocked": true,
-    "discovered": true,
-    "blueprint_compat": true,
-    "eternal_compat": true,
-    "rarity": 3,
-    "cost": 10,
-    "name": "Parrot",
-    "pos": {"x":0,"y":0},
-    "set": "Joker",
-    "effect": "Copycat",
-    "cost_mult": 1.0,
-    "config": {},
-    "atlas": "Parrot"
-  }
+  j_parrot: {
+    unlocked: true,
+    discovered: true,
+    blueprint_compat: true,
+    eternal_compat: true,
+    rarity: 3,
+    cost: 10,
+    name: "Parrot",
+    pos: {x:0,y:0},
+    set: "Joker",
+    effect: "Copycat",
+    cost_mult: 1.0,
+    config: {},
+    atlas: "Parrot",
+  },
 }

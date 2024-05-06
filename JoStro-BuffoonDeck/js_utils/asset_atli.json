@@ -1,3 +1,7 @@
 [
-  {"name": "JS_Buffoon", "path": "buffoon_deck.png", "px": 71, "py": 95}
+  {
+    name: "JS_Buffoon",
+    path: "buffoon_deck.png",
+    px: 71, py: 95,
+  },
 ]
