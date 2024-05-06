@@ -1,0 +1,46 @@
+[config]
+schemaVersion = "0.1.1"
+
+[package]
+namespace = "JoStro"
+name = "json5"
+versionNumber = "0.1.1"
+description = "Exposes a module for parsing json5 using lovely"
+websiteUrl = "https://github.com/JopStro/json5-lua"
+containsNsfwContent = false
+[package.dependencies]
+Thunderstore-lovely = "0.4.0"
+
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./build"
+
+[[build.copy]]
+source = "./lovely.toml"
+target = "lovely.toml"
+
+[[build.copy]]
+source = "./json5.dll"
+target = "json5.dll"
+
+[[build.copy]]
+source = "./json5.dylib"
+target = "json5.dylib"
+
+[[build.copy]]
+source = "./injection.lua"
+target = "injection.lua"
+
+[[build.copy]]
+source = "./LICENSE"
+target = "LICENSE"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = [ "balatro", ]
+[publish.categories]
+balatro = [ "libraries", ]
+
+

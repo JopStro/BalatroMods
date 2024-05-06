@@ -1,0 +1,12 @@
+[manifest]
+version = "0.1.0"
+dump_lua = false
+priority = 0
+
+[[patches]]
+[patches.copy]
+target = "main.lua"
+position = "prepend"
+sources = [
+  "injection.lua",
+]
