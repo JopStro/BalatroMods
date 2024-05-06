@@ -26,6 +26,33 @@ overwrite = false
 
 [[patches]]
 [patches.pattern]
+target = "card.lua"
+pattern = "if self.sticker then loc_vars = loc_vars or {}; loc_vars.sticker=self.sticker end"
+position = "before"
+payload = '''
+local custom_badges = self.config.center.badges
+if custom_badges then
+  for _, badge in ipairs(custom_badges) do
+    badges[#badges+1] = badge
+  end
+end
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "main.lua"
+pattern = "G:start_up()"
+position = "after"
+payload = '''
+require("js_utils").addBadgeColours()
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
 target = "game.lua"
 pattern = "self.sticker_map = {"
 position = "before"

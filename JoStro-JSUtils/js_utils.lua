@@ -2,7 +2,7 @@
 local _M = {}
 
 local lovely = require "lovely"
-local json = require "json"
+local json = require "json5"
 local fs = require "nativefs"
 local modDir = lovely.mod_dir
 
@@ -86,7 +86,7 @@ function _M.addBlinds(game)
     count = add_prototypes(game.P_BLINDS,count,blinds,function(v)
       v.pos = v.pos or {x=0,y=0}
       if type(v.boss_colour) == "string" then
-        v.boss_colour = HEX(v.boss_colour)
+        v.boss_colour = G.C[v.boss_colour] or HEX(v.boss_colour)
       end
     end)
   end
@@ -141,6 +141,28 @@ function _M.addLoc(game)
       for key, v in pairs(loc[set]) do
         game.localization.descriptions[set][key] = v
       end
+    end
+  end
+  for locs in configs("misc_loc.json") do
+    local loc = locs[game.SETTINGS.language] or locs["en-us"]
+    for category, _ in pairs(loc) do
+      print(category)
+      for key, v in pairs(loc[category]) do
+        print("  "..key..": "..v)
+        game.localization.misc[category][key] = v
+      end
+    end
+  end
+end
+
+function _M.addBadgeColours()
+  get_badge_colour(0)
+  for colours in configs("badge_colours.json") do
+    for k, v in pairs(colours) do
+      if type(v) == "string" then
+        v = G.C[v] or HEX(v)
+      end
+      G.BADGE_COL[k] = v
     end
   end
 end
